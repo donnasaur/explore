@@ -5,46 +5,69 @@
         
         // draw empty space background
         var spaceBG = new Image();
-        spaceBG.onload = function() {
+        spaceBG.src = 'images/sprites.png';
+        spaceBG.draw = function() {
             for (var i=0; i<6; i++) {
                 for (var j=0; j<6; j++) {
-                    ctx.drawImage(spaceBG,j*200,i*200);    
+                    ctx.drawImage(spaceBG,113,302,200,200,j*200,i*200,200,200);    
                 }
             }
-            
-            console.log('start drawing stuff');
         };
-        spaceBG.src = 'images/cardboard_gray.png';
+        spaceBG.draw();
 
         //draw random stars
         var stars = new Image();
-        stars.onload = function() {
+        stars.src = 'images/sprites.png';
+        stars.draw = function() {
             for (var i=0; i<5; i++) {
                 var randomX = Math.floor(Math.random()*1025);
                 var randomY = Math.floor(Math.random()*600);
-                ctx.drawImage(stars,0,0,42,70,randomX,randomY,42,70);
+                ctx.drawImage(stars,48,334,42,70,randomX,randomY,42,70);
             }
             for (var i=0; i<15; i++) {
                 var randomX = Math.floor(Math.random()*1025);
                 var randomY = Math.floor(Math.random()*600);
-                ctx.drawImage(stars,0,0,42,70,randomX,randomY,21,35);
+                ctx.drawImage(stars,48,334,42,70,randomX,randomY,21,35);
             }
             for (var i=0; i<10; i++) {
                 var randomX = Math.floor(Math.random()*1025);
                 var randomY = Math.floor(Math.random()*600);
-                ctx.drawImage(stars,0,0,42,70,randomX,randomY,10.5,17.5);
+                ctx.drawImage(stars,48,334,42,70,randomX,randomY,10.5,17.5);
             }
         };
-        stars.src = 'images/sprites.png';
-
+        stars.draw();
+       
         //draw random planets
+        var planetBlue = new Image();
+        planetBlue.src = 'images/sprites.png';
+        planetBlue.draw = function() {
+            ctx.drawImage(planetBlue,48,517,440,440,100,100,88,88);
+        };
+        planetBlue.draw();
+
+        var planetRed = new Image();
+        planetRed.src = 'images/sprites.png';
+        planetRed.draw = function() {
+            ctx.drawImage(planetRed,545,517,440,440,700,200,264,264);
+        };
+        planetRed.draw();
+
+        var planetGreen = new Image();
+        planetGreen.src = 'images/sprites.png';
+        planetGreen.draw = function() {
+            ctx.drawImage(planetGreen,48,1008,440,440,200,315,200,200);
+            console.log('draw a green planet');
+        };
+        planetGreen.draw();
 
         // draw dashboard image
         var dashboard = new Image();
-        dashboard.onload = function() {
+        dashboard.src = 'images/sprites.png';
+        dashboard.draw = function() {
             ctx.drawImage(dashboard,0,0,1024,295,0,305,1024,295);
-        }
-        dashboard.src = 'images/dashboard.png'; 
+        };
+        dashboard.draw();
+        
     }
     
 
