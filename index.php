@@ -27,15 +27,18 @@ Copyright 2012 Donna Almendrala (see AUTHORS)
     
 </head>
 
-<body>
-
+<body onload="draw();">
+    <img class="preload" src="images/sprites.png" />
     <div class="wrapper">
+        <canvas id="canvas" width="1024px" height="600px"></canvas>
+        <!--
         <div class="space">
         </div>
         <div class="planet">
         </div>
         <div class="dashboard">
         </div>
+        -->
     </div>
 
 

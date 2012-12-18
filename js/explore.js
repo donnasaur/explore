@@ -1,4 +1,55 @@
+// draw stuff to the canvas
+    
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        
+        // draw empty space background
+        var spaceBG = new Image();
+        spaceBG.onload = function() {
+            for (var i=0; i<6; i++) {
+                for (var j=0; j<6; j++) {
+                    ctx.drawImage(spaceBG,j*200,i*200);    
+                }
+            }
+            
+            console.log('start drawing stuff');
+        };
+        spaceBG.src = 'images/cardboard_gray.png';
+
+        //draw random stars
+        var stars = new Image();
+        stars.onload = function() {
+            for (var i=0; i<5; i++) {
+                var randomX = Math.floor(Math.random()*1025);
+                var randomY = Math.floor(Math.random()*600);
+                ctx.drawImage(stars,0,0,42,70,randomX,randomY,42,70);
+            }
+            for (var i=0; i<15; i++) {
+                var randomX = Math.floor(Math.random()*1025);
+                var randomY = Math.floor(Math.random()*600);
+                ctx.drawImage(stars,0,0,42,70,randomX,randomY,21,35);
+            }
+            for (var i=0; i<10; i++) {
+                var randomX = Math.floor(Math.random()*1025);
+                var randomY = Math.floor(Math.random()*600);
+                ctx.drawImage(stars,0,0,42,70,randomX,randomY,10.5,17.5);
+            }
+        };
+        stars.src = 'images/sprites.png';
+
+        //draw random planets
+
+        // draw dashboard image
+        var dashboard = new Image();
+        dashboard.onload = function() {
+            ctx.drawImage(dashboard,0,0,1024,295,0,305,1024,295);
+        }
+        dashboard.src = 'images/dashboard.png'; 
+    }
+    
+
 $(document).ready(function() {
+   
     $(document).keydown(function(key) {
   
         // Find current CSS background-position

@@ -693,14 +693,25 @@ div {
     position: relative;
 }
 
+.preload {
+
+    display: block;
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    visibility: hidden;
+}
+
 .wrapper {
 
     width: 1024px;
     height: 600px;
     margin: 50px auto;
-
+    
     border: 4px solid gray;
-    border-radius: 8px;
+    /*-webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;*/
 }
 
 .space {
@@ -708,7 +719,7 @@ div {
     width: 1024px;
     height: 600px;
 
-    background: url('../images/stars.png') 0 0;
+    background: url('../images/cardboard_gray.png') 0 0;
     overflow: hidden;
     
     z-index: -3;
@@ -734,8 +745,7 @@ div {
 
     margin-top: -295px;
 
-    background: url('../images/dashboard.png') 0 0 no-repeat;
-
+    /*background: url('../images/dashboard.png') 0 0 no-repeat;*/
     overflow: hidden;
 
     z-index: -1;
